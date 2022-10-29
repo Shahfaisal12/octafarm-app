@@ -1,0 +1,20 @@
+import React from 'react'
+import Brand from '../elements/Brand'
+import GateWay from '../elements/GateWay'
+import Hero from '../elements/Hero'
+import Invest from '../elements/Invest'
+import Sale from '../elements/Sale'
+
+const Home = () => {
+  return (
+    <>
+    <Hero />
+    <Brand />
+    <Invest />
+    <GateWay />
+    <Sale />
+    </>
+  )
+}
+
+export default Home

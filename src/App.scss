@@ -1,0 +1,293 @@
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+  //   font-family: Bebas;
+  font-family: Montserrat, sans-serif !important;
+  background-color: #0b132b !important;
+  color: #ffffff !important;
+  overflow-x: hidden;
+}
+
+.color-6fffe9c7 {
+  color: #6fffe9c7 !important;
+}
+.btn-outline-primary {
+  border-color: #99fff0 !important;
+  color: #fff !important;
+}
+.btn-primary {
+  background-color: #6fffe9c7 !important;
+  color: #0b132b !important;
+  font-weight: 600 !important;
+  font-size: 16px;
+  border: 1px solid #3a506b !important;
+  outline: 0 !important;
+}
+.zIndex {
+  z-index: 9999;
+}
+
+// .hero-section {
+//   &::before {
+//     background-image: url("https://octafarm.fi/_next/static/media/hero1.3c57c574a65446600a18bc06f7bd53b6.svg");
+//     content: "";
+//     width: 1464px;
+//     display: block;
+//     height: 1447px;
+//     position: absolute;
+//     z-index: 1;
+//     background-position: 50%;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     z-index: 0;
+//     top: -300px;
+//   }
+//   &::after {
+//     background-image: url(https://octafarm.fi/_next/static/media/hero1.3c57c57….svg);
+//     content: "";
+//     width: 1464px;
+//     display: block;
+//     height: 1447px;
+//     position: absolute;
+//     z-index: 1;
+//     background-position: 50%;
+//     background-repeat: no-repeat;
+//     background-size: cover;
+//     z-index: 0;
+//     bottom: -440px;
+//     right: -960px;
+//   }
+// }
+
+////////////////////////  HERO SECTION /////////////////////
+.hero-section {
+  .hero-bg-image {
+    // width: 100% !important;
+    position: absolute;
+    top: -19em;
+    right: -5em;
+    z-index: 2;
+    overflow: hidden;
+    width: 69em !important;
+    opacity: 0.8;
+
+    .bg_img_front {
+      -webkit-animation: oct-back 8s cubic-bezier(0.66, 0, 0, 1) 0s infinite
+        alternate;
+      animation: oct-back 8s cubic-bezier(0.66, 0, 0, 1) 0s infinite alternate;
+    }
+
+    .bg_img_middle {
+      position: absolute;
+      top: -0.5em;
+      left: 0;
+    }
+
+    .bg_img_back {
+      position: absolute;
+      top: 0;
+      left: 0;
+      -webkit-animation: oct-back 4s cubic-bezier(0.66, 0, 0, 1) 0s infinite
+        alternate;
+      animation: oct-back 4s cubic-bezier(0.66, 0, 0, 1) 0s infinite alternate;
+    }
+  }
+  .btn {
+    height: 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    padding: 6px 30px;
+    letter-spacing: 2px;
+  }
+
+  iframe {
+    position: relative;
+    z-index: 9999;
+    top: 0;
+  }
+}
+
+////////////////////// BRAND SECTION  ///////////////////////////
+
+.brand-section {
+  z-index: 9999;
+  img {
+    filter: brightness(0) invert(1);
+  }
+}
+
+////////////////////// INVEST SECTION ////////////////////@at-root
+
+.invest-section {
+  background: radial-gradient(
+    17.4% 50% at 41.26% 50%,
+    #0d3f59 0,
+    rgba(4, 24, 54, 0) 100%
+  );
+  overflow-x: hidden;
+  padding-top: 100px;
+  .card {
+    background: rgba(46, 125, 175, 0.2) !important;
+    padding: 10px;
+    position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 0;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-radius: 8px !important;
+      padding: 1px;
+      background: -webkit-gradient(
+        linear,
+        left top,
+        left bottom,
+        from(#6fffe9),
+        to(#1c2541)
+      );
+      background: -webkit-linear-gradient(top, #6fffe9, #1c2541);
+      background: linear-gradient(180deg, #6fffe9, #1c2541);
+      -webkit-mask: -webkit-linear-gradient(#6fffe9 0 0) content-box,
+        -webkit-linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+    }
+    .upto {
+      font-weight: 700;
+      font-size: 12px !important;
+      letter-spacing: -0.2px;
+      font-family: Montserrat, sans-serif;
+      display: block;
+      text-align: center;
+      margin-left: 30px !important;
+      position: relative;
+      text-align: start !important;
+    }
+    .card-ft {
+      font-size: 12px !important;
+      font-weight: bold;
+    }
+  }
+}
+
+////////////////////// GATE WAY  ////////////////////////////@at-root
+
+.gateway-section {
+  .list-group-item {
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 30px;
+    background: #1c2541;
+    color: #fff;
+    -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+    border-left: 2px solid #6fffe9;
+  }
+
+  .networks {
+    margin-top: 50px;
+    .network-child {
+      margin-bottom: 40px;
+    }
+    .network-child:nth-child(1) {
+      margin-top: 4px;
+    }
+    .network-child:nth-child(2) {
+      margin-top: 8px;
+    }
+    .network-child:nth-child(3) {
+      margin-top: 16px;
+    }
+    .network-child:nth-child(4) {
+      margin-top: 16px;
+    }
+  }
+
+  .octopas-image {
+    &::before {
+      background-image: url("https://octafarm.fi/_next/static/media/line_bubble.4c2d39c7e40f2acf13cb6fcf337de858.svg");
+      content: "";
+      width: 300px;
+      display: block;
+      height: 300px;
+      position: absolute;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 1;
+      top: -80px;
+      left: -30px;
+    }
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 1;
+      background-image: url("https://octafarm.fi/_next/static/media/octa-legs-1.69ab3745d55f261d9b19f06f1b410052.svg");
+      width: 178px;
+      height: 346px;
+      top: -webkit-calc(60% - 173px);
+      top: calc(60% - 173px);
+      left: -140px;
+    }
+
+    .cotopus-foot::after {
+      content: "";
+      display: block;
+      position: absolute;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 1;
+      background-image: url("https://octafarm.fi/_next/static/media/octa-legs-2.1e0f2c16051dd75a82620bd607dff1f5.svg");
+      width: 124px;
+      height: 228px;
+      top: -webkit-calc(62% - 114px);
+      top: calc(62% - 114px);
+      left: 200px;
+    }
+  }
+  .step-4 {
+    margin-top: 110px;
+    &::after {
+      background-image: url("https://octafarm.fi/_next/static/media/octa-legs-3.ba5f5d01d93414fe5adde2409e291d5b.svg");
+      content: "";
+      width: 85px;
+      display: block;
+      height: 224px;
+      position: absolute;
+      background-position: 50%;
+      background-repeat: no-repeat;
+      background-size: cover;
+      z-index: 1;
+      top: -webkit-calc(30% - 112px);
+      top: calc(30% - 112px);
+      right: -60px;
+    }
+  }
+  .step-5 {
+    margin-left: 70px;
+    margin-top: 115px;
+  }
+}
+
+
+
+
+///////////////////// SALE SECTION  //////////////////////////@at-root
+
+.sale-section{
+    .card{
+        background: rgba(46, 125, 175, 0.2) !important;
+        padding: 10px;
+        position: relative;
+    }
+}
