@@ -5,14 +5,14 @@ const Invest = () => {
         <div className="invest-section">
             <div className="container">
                 <div className="row align-items-center">
-                    <div className="col-md-5 ">
+                    <div className="col-md-5 mb-3 mb-md-0">
                         <h6 className="color-6fffe9c7 fw-bold">INVEST <span>THE RIGHT WAY</span></h6>
                         <span className="h4 fw-bold">Supercharge Your Returns</span>
                         <h5>Save Time &amp; Gas Fees Through Automation</h5>
                     </div>
                     <div className="col-md-7">
                         <div className="row justify-content-between">
-                            <div className="col-md-5">
+                            <div className="col-md-5 mb-3 mb-md-0">
                                 <div className="card">
                                     <div className="card-body">
                                         <span className='lh-1'>Highest Auto
@@ -26,7 +26,7 @@ const Invest = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="col-md-6">
+                            <div className="col-md-6 mb-3 mb-md-0">
                                 <div className="card">
                                     <div className="card-body">
                                         <span className='lh-1'>Projected

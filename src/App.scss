@@ -10,8 +10,15 @@ body {
   overflow-x: hidden;
 }
 
+.color-d6fff9 {
+  color: #d6fff9;
+}
+
 .color-6fffe9c7 {
   color: #6fffe9c7 !important;
+}
+.color-6d8bb0 {
+  color: #6d8bb0;
 }
 .btn-outline-primary {
   border-color: #99fff0 !important;
@@ -29,54 +36,85 @@ body {
   z-index: 9999;
 }
 
-// .hero-section {
-//   &::before {
-//     background-image: url("https://octafarm.fi/_next/static/media/hero1.3c57c574a65446600a18bc06f7bd53b6.svg");
-//     content: "";
-//     width: 1464px;
-//     display: block;
-//     height: 1447px;
-//     position: absolute;
-//     z-index: 1;
-//     background-position: 50%;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     z-index: 0;
-//     top: -300px;
-//   }
-//   &::after {
-//     background-image: url(https://octafarm.fi/_next/static/media/hero1.3c57c57….svg);
-//     content: "";
-//     width: 1464px;
-//     display: block;
-//     height: 1447px;
-//     position: absolute;
-//     z-index: 1;
-//     background-position: 50%;
-//     background-repeat: no-repeat;
-//     background-size: cover;
-//     z-index: 0;
-//     bottom: -440px;
-//     right: -960px;
-//   }
-// }
+/////////////////////////////////// TOOGLER ICON COLOR CHANGE COLOR //////////////////////////
+
+.navbar .navbar-toggler-icon {
+  width: 24px;
+  height: 17px;
+  background-image: none !important;
+  position: relative;
+  border-bottom: 2px solid #ffffff;
+  transition: all 300ms linear;
+}
+.navbar .navbar-toggler-icon:after,
+.navbar-toggler-icon:before {
+  width: 24px;
+  position: absolute;
+  height: 2px;
+  background-color: #ffffff;
+  top: 0;
+  left: 0;
+  content: "";
+  z-index: 2;
+  transition: all 300ms linear;
+}
+.navbar .navbar-toggler-icon:after {
+  top: 8px;
+}
+
+.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:after {
+  transform: rotate(45deg) !important;
+}
+.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon:before {
+  transform: translateY(8px) rotate(-45deg) !important;
+}
+.navbar .navbar-toggler[aria-expanded="true"] .navbar-toggler-icon {
+  border-color: transparent !important;
+}
 
 ////////////////////////  HERO SECTION /////////////////////
+
+@keyframes bgBack {
+  0%,
+  100% {
+    transform: translateX(0%);
+    transform-origin: 50% 50%;
+  }
+
+  15% {
+    transform: translateX(-30px) rotate(-6deg);
+  }
+
+  30% {
+    transform: translateX(15px) rotate(6deg);
+  }
+
+  45% {
+    transform: translateX(-15px) rotate(-3.6deg);
+  }
+
+  60% {
+    transform: translateX(9px) rotate(2.4deg);
+  }
+
+  75% {
+    transform: translateX(-6px) rotate(-1.2deg);
+  }
+}
+
 .hero-section {
   .hero-bg-image {
-    // width: 100% !important;
     position: absolute;
-    top: -19em;
+    top: -14em;
     right: -5em;
     z-index: 2;
     overflow: hidden;
-    width: 69em !important;
+    width: 60em;
     opacity: 0.8;
 
     .bg_img_front {
-      -webkit-animation: oct-back 8s cubic-bezier(0.66, 0, 0, 1) 0s infinite
-        alternate;
-      animation: oct-back 8s cubic-bezier(0.66, 0, 0, 1) 0s infinite alternate;
+      animation: bgBack 60s cubic-bezier(0.65, 0, 0.35, 1) 0s infinite alternate;
+      width: 69rem;
     }
 
     .bg_img_middle {
@@ -89,9 +127,7 @@ body {
       position: absolute;
       top: 0;
       left: 0;
-      -webkit-animation: oct-back 4s cubic-bezier(0.66, 0, 0, 1) 0s infinite
-        alternate;
-      animation: oct-back 4s cubic-bezier(0.66, 0, 0, 1) 0s infinite alternate;
+      width: 69rem;
     }
   }
   .btn {
@@ -109,6 +145,12 @@ body {
     z-index: 9999;
     top: 0;
   }
+  h1 {
+    font-size: 38px;
+  }
+  h3 {
+    font-size: 20px;
+  }
 }
 
 ////////////////////// BRAND SECTION  ///////////////////////////
@@ -117,6 +159,20 @@ body {
   z-index: 9999;
   img {
     filter: brightness(0) invert(1);
+  }
+
+  @keyframes shoot-right {
+    from {
+      transform: translateX(0%);
+    }
+
+    to {
+      transform: translateX(100%);
+    }
+  }
+
+  .shoot-right {
+    animation: shoot-right 3s ease-in-out infinite;
   }
 }
 
@@ -144,19 +200,21 @@ body {
       bottom: 0;
       border-radius: 8px !important;
       padding: 1px;
-      background: -webkit-gradient(
-        linear,
-        left top,
-        left bottom,
-        from(#6fffe9),
-        to(#1c2541)
-      );
-      background: -webkit-linear-gradient(top, #6fffe9, #1c2541);
       background: linear-gradient(180deg, #6fffe9, #1c2541);
+      -webkit-mask: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            color-stop(0, #6fffe9)
+          )
+          content-box,
+        -webkit-gradient(linear, left top, left bottom, color-stop(0, #fff));
       -webkit-mask: -webkit-linear-gradient(#6fffe9 0 0) content-box,
         -webkit-linear-gradient(#fff 0 0);
+      -webkit-mask-composite: destination-out;
       mask-composite: exclude;
     }
+
     .upto {
       font-weight: 700;
       font-size: 12px !important;
@@ -184,7 +242,6 @@ body {
     margin-bottom: 30px;
     background: #1c2541;
     color: #fff;
-    -webkit-box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
     box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
     border-left: 2px solid #6fffe9;
   }
@@ -209,20 +266,6 @@ body {
   }
 
   .octopas-image {
-    &::before {
-      background-image: url("https://octafarm.fi/_next/static/media/line_bubble.4c2d39c7e40f2acf13cb6fcf337de858.svg");
-      content: "";
-      width: 300px;
-      display: block;
-      height: 300px;
-      position: absolute;
-      background-position: 50%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      z-index: 1;
-      top: -80px;
-      left: -30px;
-    }
     &::after {
       content: "";
       display: block;
@@ -252,7 +295,7 @@ body {
       height: 228px;
       top: -webkit-calc(62% - 114px);
       top: calc(62% - 114px);
-      left: 200px;
+      left: 260px;
     }
   }
   .step-4 {
@@ -279,15 +322,350 @@ body {
   }
 }
 
-
-
-
 ///////////////////// SALE SECTION  //////////////////////////@at-root
 
-.sale-section{
-    .card{
-        background: rgba(46, 125, 175, 0.2) !important;
-        padding: 10px;
-        position: relative;
+.sale-section {
+  .card {
+    background: rgba(46, 125, 175, 0.2) !important;
+    padding: 10px;
+    position: relative;
+  }
+}
+
+.bonous {
+  font-weight: 700;
+  font-size: 12px !important;
+  letter-spacing: -0.2px;
+}
+.title1 {
+  display: block;
+  font-weight: 600;
+  font-size: 22px;
+  letter-spacing: 1px;
+}
+.coming {
+  position: absolute;
+  display: block;
+  font-size: 8px !important;
+  padding: 3px 8px;
+  background-color: #5bc0be;
+  color: #0b132b !important;
+  font-weight: 600;
+  -webkit-transform: rotate(-40deg);
+  transform: rotate(-40deg);
+  top: 26px;
+  border-radius: 0px !important;
+  left: -10px;
+  letter-spacing: 1px;
+}
+
+/////////////////////////////////////// TOKONOMIC SECTION  /////////////////////////////////////
+
+.apexcharts-legend-text{
+  font-size: 16px !important;
+  color: #FFFFFF !important;
+}
+
+/////////////////////////////////////// UTALITIES SECTION ////////////////////////////////////@at-root
+
+.utilities-section {
+  .card1 {
+    background: linear-gradient(130.03deg, #00304b 27.17%, #1f2947 85.87%);
+
+    &:hover {
+      background: linear-gradient(130.03deg, #1f2947 27.17%, #00304b 85.87%);
     }
+  }
+
+  .card2 {
+    background: linear-gradient(300deg, #00304b, #1f2947 60%);
+    &:hover {
+      background: linear-gradient(300deg, #1f2947, #00304b 60%);
+    }
+  }
+
+  .card3 {
+    background: linear-gradient(230deg, #00304b, #1f2947);
+    &:hover {
+      background: linear-gradient(230deg, #1f2947, #00304b);
+    }
+  }
+
+  .card4 {
+    background: linear-gradient(30deg, #00304b, #1f2947 70%);
+
+    &:hover {
+      background: linear-gradient(30deg, #1f2947, #00304b 70%);
+    }
+  }
+
+  .card5 {
+    background: linear-gradient(100.03deg, #00304b 20.17%, #1f2947 85.87%);
+    &:hover {
+      background: linear-gradient(100.03deg, #1f2947 20.17%, #00304b 85.87%);
+    }
+  }
+
+  .card6 {
+    background: linear-gradient(10deg, #00304b, #1f2947 72.43%);
+    &:hover {
+      background: linear-gradient(10deg, #1f2947, #00304b 72.43%);
+    }
+  }
+}
+
+///////////////////// ROADMAP /////////////////////////////@at-root
+
+.raodmap-main-section {
+  margin-top: 0;
+  margin-bottom: 40px;
+  position: relative;
+  display: flex;
+  background: url("../public/assets/roadmap-bg.svg") no-repeat;
+  background-size: contain;
+  background-position: 50%;
+    overflow-y: hidden !important;
+    overflow-x: auto !important;
+    &::-webkit-scrollbar {
+      display: none !important;
+  }
+}
+
+.raodmap-container {
+  padding: 250px 0;
+  text-align: center;
+  white-space: nowrap;
+  display: flex;
+  margin: 0 auto;
+}
+
+.dot-grid-graphic {
+  position: absolute;
+  top: 0;
+  left: calc(50% - 75rem);
+  z-index: 1;
+  opacity: 0.2;
+}
+
+.raodmap-section:first-child {
+  border: 1px solid #99fff0;
+}
+.raodmap-section {
+  width: 150px;
+  min-width: 150px;
+  height: 1px;
+  border: 1px solid #3a506b;
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+}
+.raodmap-section.active .raodmap-section-node {
+  background-color: #99fff0;
+}
+.raodmap-section-branch {
+  height: 140px;
+  width: 1px;
+  background-image: url("../public/assets/fram.svg");
+  position: absolute;
+  bottom: 11px;
+  left: 5px;
+}
+
+ul.list-minus {
+  list-style: none;
+  margin: 0;
+}
+.list-minus li:before {
+  content: "-";
+  display: inline-block;
+  width: 1em;
+}
+
+.raodmap-section.active .raodmap-section-node:after {
+  content: "";
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  left: -10px;
+  top: -10px;
+}
+
+.raodmap-section:nth-child(2n) .raodmap-section-branch {
+  top: 11px;
+  .raodmap-text {
+    top: 78px;
+  }
+}
+
+.raodmap-section .raodmap-text {
+  width: 250px;
+  white-space: normal;
+  text-align: left;
+  position: absolute;
+  top: -40px;
+  left: -5px;
+}
+
+.raodmap-section .raodmap-text-content {
+  max-height: 120px;
+  overflow: hidden;
+  padding-bottom: 20px;
+  color: #d6fff9;
+  position: relative;
+  word-wrap: break-word;
+}
+
+.raodmap-section .raodmap-text-title {
+  margin-bottom: 5px;
+  margin-top: 15px;
+  font-size: 20px;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: 2px;
+}
+
+.raodmap-section .raodmap-text-content:after {
+  content: "";
+  position: absolute;
+  height: 20px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.raodmap-section.long {
+  width: 280px;
+  min-width: 250px;
+}
+
+.raodmap-section-year {
+  position: absolute;
+  bottom: 15px;
+  right: 10%;
+  font-size: 20px;
+}
+.raodmap-section-node {
+  width: 21px;
+  height: 21px;
+  border-radius: 50%;
+  background-color: #3a506b;
+  border: 4px solid #0b132b;
+  position: absolute;
+  top: -10px;
+  right: -5px;
+  z-index: 2;
+}
+
+.raodmap:before {
+  background-image: url("../public/assets/background-light.svg");
+  content: "";
+  width: 1450px;
+  display: block;
+  height: 850px;
+  position: absolute;
+  z-index: 1;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  z-index: 0;
+  top: -180px;
+  left: -900px;
+}
+
+////////////////////////////// FAQS ///////////////////////////////////
+
+.react-faqs-section {
+  background: #080e21;
+
+  .faq-row {
+    margin: 10px;
+    background-color: #1f2947;
+    padding-left: 20px !important;
+    border-radius: 4px;
+    border: 0 !important;
+    box-shadow: 0 0 10px 0 rgb(0 0 0 / 10%);
+  }
+}
+
+////////////////////////// FOOTER SECTION  /////////////////////////@at-root
+.footer-section {
+  .footer-border-top {
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 2px solid #1f2947;
+  }
+
+  ul {
+    li {
+      list-style: none;
+      a {
+        text-decoration: none;
+        color: #6d8bb0;
+        padding-left: 10px;
+        font-size: 16px;
+      }
+    }
+  }
+
+  h5 {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 2px;
+    font-weight: 700;
+  }
+}
+
+//////////////////////   MEDIA QUERY /////////////////////////////
+
+@media only screen and (max-width: 600px) {
+
+  .hero-section {
+    .hero-bg-image {
+      top: -2em;
+      right: -14em;
+      width: 32em;
+  
+      .bg_img_front, .bg_img_back {
+        width: 25rem;
+      }
+    }
+  }
+
+  iframe {
+    margin-top: 10px;
+    max-width: 295px !important;
+  }
+  .brand-section {
+    img {
+      width: 100px !important;
+    }
+  }
+
+  .utilities-section {
+    margin-top: 30px;
+    h1 {
+      font-size: 24px;
+    }
+    .text-header {
+      font-size: 14px;
+    }
+  }
+
+  .react-faqs-section {
+    .row-title-text {
+      font-size: 14px;
+    }
+  }
+  .hero-section {
+    h3 {
+      font-size: 16px;
+    }
+    h1 {
+      font-size: 20px;
+    }
+  }
+  .invest-section {
+    padding-top: 50px;
+  }
 }

@@ -2,7 +2,7 @@ import React from 'react'
 
 const GateWay = () => {
     return (
-        <div className="gateway-section py-3 py-5">
+        <div className="gateway-section py-3 py-5 d-none d-md-block">
             <div className="container mt-0 mt-md-5">
                 <div className="row text-center d-flex justify-content-around align-items-center">
                     <div className="col-lg-10">
@@ -34,7 +34,7 @@ const GateWay = () => {
                     <div className="col-lg-4 d-flex align-items-center">
                         <div className="octopas-image position-relative">
                             <div className="cotopus-foot">
-                                <img src="assets/octopus.svg" width="240" className='position-relative' alt='' />
+                                <img src="assets/octopus.svg" width="300" className='position-relative' alt='' />
                             </div>
                         </div>
                     </div>
